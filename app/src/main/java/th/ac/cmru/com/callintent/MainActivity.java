@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String uri = "tel:"+txtPhoneNumber.getText();
                 Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_DIAL);
+                intent.setAction(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:12345"));
                 startActivity(intent);
             }
