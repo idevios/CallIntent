@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    TelephonyManager telephony;
+    MyPhoneStateListener listener;
+
     EditText txtPhoneNumber;
     Button btnMakeCall;
 
@@ -21,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        telephony = (TelephonyManager) getSystemService(Context.TELECOM_SERVICE);
+        listener = new MyPhoneStateListener(this);
+
+        telephony.listen(listener, PhoneStateListener.LISTEN_CALL_STATE);
 
         txtPhoneNumber = (EditText) findViewById(R.id.phone_number);
         btnMakeCall = (Button) findViewById(R.id.make_call_button);
