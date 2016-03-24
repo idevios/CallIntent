@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         txtPhoneNumber = (EditText) findViewById(R.id.phone_number);
         btnMakeCall = (Button) findViewById(R.id.make_call_button);
-        
+
         btnMakeCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
