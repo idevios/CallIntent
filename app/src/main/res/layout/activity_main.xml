@@ -13,4 +13,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="phone"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make Call"
+        android:id="@+id/make_call_button"
+        android:layout_gravity="center_horizontal"/>
 </LinearLayout>
