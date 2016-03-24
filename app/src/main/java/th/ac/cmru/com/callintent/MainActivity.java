@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        telephony = (TelephonyManager) getSystemService(Context.TELECOM_SERVICE);
+        telephony = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         listener = new MyPhoneStateListener(this);
 
         telephony.listen(listener, PhoneStateListener.LISTEN_CALL_STATE);
