@@ -14,8 +14,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText txtPhoneNumber = (EditText) findViewById(R.id.phone_number);
-    Button btnMakeCall = (Button) findViewById(R.id.make_call_button);
+    EditText txtPhoneNumber;
+    Button btnMakeCall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 String uri = "tel:"+txtPhoneNumber.getText();
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:12345"));
+                intent.setData(Uri.parse(uri));
                 startActivity(intent);
             }
         });
